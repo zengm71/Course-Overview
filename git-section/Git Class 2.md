@@ -25,7 +25,7 @@ $ git checkout -b feature_test
 Switched to a new branch 'feature_test'
 ```
 
-We can see here that we've now switched to a new branch. the `-b` flag means that we want to checkout a new branch that we called feature_test. Now let's make some changes. It's important to remember that this branch is completely seperate from our other branches, any code, changes, modifications to this branch are completely isolated from the other branches. Go ahead and open up `hello_world.txt` in your favorite editor. We'll add in the text:
+We can see here that we've now switched to a new branch. the `-b` flag means that we want to checkout a new branch that we called feature_test. Now let's make some changes. It's important to remember that this branch is completely seperate from our other branches, any code, changes, modifications to this branch are completely isolated from the other branches. Go ahead and open up `hello.py` in your favorite editor. We'll add in the text:
 ****
 
 Hello Git!
@@ -45,7 +45,7 @@ Changes not staged for commit:
   (use "git add <file>..." to update what will be committed)
   (use "git checkout -- <file>..." to discard changes in working directory)
 
-	modified:   hello_world.txt
+	modified:   hello.py
 
 no changes added to commit (use "git add" and/or "git commit -a")
 ```
@@ -53,7 +53,7 @@ no changes added to commit (use "git add" and/or "git commit -a")
 Now we add it and commit it.
 
 ```sh
-$ git add hello_world.txt                                                                
+$ git add hello.py                                                                
 $ git commit -m "Great new feature"                                                     
 [feature_test 53c3a1a] Great new feature
  1 file changed, 5 insertions(+)
@@ -85,17 +85,16 @@ Switched to branch 'master'
 Now we're back on the master branch if we run
 
 ```sh
-$ cat hello_world.txt
-Hello Git!
+$ cat hello.py
 ```
 
-We'll see our unmodified version of hello_world.txt (the one without the feature that we added). Now let's go ahead and merge the two branches.
+We'll see our unmodified version of hello.py (the one without the feature that we added). Now let's go ahead and merge the two branches.
 
 ```sh
 $ git merge feature_test                                                                        
 Updating 4407308..53c3a1a
 Fast-forward
- hello_world.txt | 5 +++++
+ hello.py | 5 +++++
  1 file changed, 5 insertions(+)
 ```
 

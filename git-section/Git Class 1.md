@@ -51,7 +51,7 @@ Now that we've gotten those definitions, let's learn some of the vocabulary and 
 - Staging
 	- The staging area is one where you prepare and review to make a commit to a repository. It's where you might run tests to make sure that the code you are committing is valid.
 - Remote Repo
-	- The remote repository is a version of the project on a remote computer. 
+	- The remote repository is a version of the project on a remote computer.
 - Local Repo
 	- A local repository is one on a particular machine typically your own.
 
@@ -68,7 +68,7 @@ Now that we've gotten those definitions, let's learn some of the vocabulary and 
 - Push
 	- Pushes a local branch to a remote repository.
 - Pull Request
-	- 
+	-
 - Commit
 	- Commits a files/lines in files in the staging environment to the current branch in the repository.
 - Checkout
@@ -92,7 +92,7 @@ Now that we've read the intro, let's make our first git repository. Open up your
 cd ~/Desktop
 ```
 
-once there let's go ahead and create a new folder 
+once there let's go ahead and create a new folder
 
 ```sh
 mkdir git_test
@@ -117,13 +117,28 @@ Now that we've created that folder, let's create some files to keep track of.
 Start by running:
 
 ```sh
-touch hello_world.txt
+touch hello.py
 touch ignore_me.txt
 ```
 
-This will create two text files in the current directory. Now you'll want to edit them. Open then up either using `vim` or with the text editor of your choice.
+This will create a python file and a text file in the current directory. Now you'll want to edit them. Open up the python file in the editor of your choice.
 
-In the `hello_world` file let's enter in the simple phrase "Hello Git!" and save the file.
+In the python file let's write a couple of lines.
+
+```py
+print("Hello World. I'm learning how to program in python.")
+
+# Here is a commment
+
+print("I'm also learning git.")
+
+```
+
+Let's go ahead and make sure that it works. We can do that by executing the python file from the command line. Go ahead and run
+
+```sh
+python hello.py # to execute it with python3 run python3 hello.py
+```
 
 Now return back to the command line and let's commit those changes. first we'll run:
 
@@ -141,7 +156,7 @@ Initial commit
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
 
-	hello_world.txt
+	hello.py
 	ignore_me.txt
 
 nothing added to commit but untracked files present (use "git add" to track)
@@ -149,10 +164,10 @@ nothing added to commit but untracked files present (use "git add" to track)
 
 So at this point we've got our base git repository with no files being tracked. In order for git to track changes, we've got to add a file to it or tell it to track a specific file. We do that with `git add FILENAME`. You can also add folders instead of specific files.
 
-Let's go ahead and add our `hello_world.txt` file.
+Let's go ahead and add our `hello.py` file.
 
 ```sh
-git add hello_world.txt
+git add hello.py
 ```
 
 Now run git status again and you can see that things have changed
@@ -169,7 +184,7 @@ Initial commit
 Changes to be committed:
   (use "git rm --cached <file>..." to unstage)
 
-	new file:   hello_world.txt
+	new file:   hello.py
 
 Untracked files:
   (use "git add <file>..." to include in what will be committed)
@@ -178,7 +193,7 @@ Untracked files:
 
 ```
 
-Now our `hello_world.txt` file is `staged` to be committed. Git hasn't started tracking the file changes - it just know that we're preparing to commit that file to our formal history.
+Now our `hello.py` file is `staged` to be committed. Git hasn't started tracking the file changes - it just know that we're preparing to commit that file to our formal history.
 
 Now let's do just that, commit it to the formal history. We can do that with:
 
@@ -189,7 +204,7 @@ git commit
 This will bring up a prompt that will ask us for our commit details, basically a message that we want to leave to others recording the changes that we made. In the prompt, go ahead and write. If the prompt is vim you may need to hit the `i` key before you can type.
 
 ```
-Added hello_world.txt file.
+Added hello.py file.
 ```
 
 If you're in vim, hit escape and then type `:wq` which stands for `write quit` and that will write the changes, making them permanent.
@@ -199,10 +214,10 @@ We'll get some feedback telling us something like
 ```
 [master (root-commit) 1e73b2f] test
  1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 hello_world.txt
+ create mode 100644 hello.py
 ```
 
-Now we've permanently saved this version of hello_world.txt to our history. One cool thing about git is that you can choose to commit whole files or just lines in files to the history, for the most part individual files are granular enough but it's a good feature to be aware of.
+Now we've permanently saved this version of hello.py to our history. One cool thing about git is that you can choose to commit whole files or just lines in files to the history, for the most part individual files are granular enough but it's a good feature to be aware of.
 
 Now all that remains is our ignore file, one that we don't want to track changes to - even if it changes. Git can be ordered to ignore certain files or folders and this is done with a plain text file called a `.gitignore` file.
 
@@ -216,7 +231,7 @@ Now typically files that start with . are hidden on unix systems, so you may not
 echo "ignore_me.txt" >> .gitignore
 ```
 
-This will append the file name to our `.gitignore` file. Now when we run 
+This will append the file name to our `.gitignore` file. Now when we run
 
 ```sh
 git status
@@ -240,7 +255,7 @@ Our ignore file has disappeared! This is because git reads the .gitignore file a
 git add .gitignore
 ```
 
-Feel free to run git status but at this point we're going to commit that change. We can do that with the short hand.
+Feel free to run git status but at this point we're going to commit that change. We can do that with the short hand `-m` flag.
 
 ```sh
 git commit -m "Added gitignore"
