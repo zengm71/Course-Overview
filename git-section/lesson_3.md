@@ -78,3 +78,19 @@ Now we can push our code, the layout of the command is straight forward `git pus
 ```sh
 git push origin master
 ```
+
+When we commit that we'll get some printout in return that should be similar to what is below.
+
+```
+Counting objects: 10, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (10/10), done.
+Writing objects: 100% (10/10), 7.15 KiB | 0 bytes/s, done.
+Total 10 (delta 2), reused 0 (delta 0)
+To git@github.com:MIDS-Python-Bridge-Course/Course-Overview.git
+   6e5921a..f975b78  master -> master
+```
+
+Now we're not going to concern ourself with exactly what that output is telling us, we just want to make sure that it ended positively and did not give us back an error. Now let's go look at GitHub and find our code is right there!
+
+Congratulations, you've just pushed your first code to GitHub. We'll be doing this a lot through this course!
