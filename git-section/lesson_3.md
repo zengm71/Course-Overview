@@ -69,11 +69,40 @@ Your url will be different that the one listed above, however the layout should 
 git remote
 ```
 
-which should print `origin`
+which should print `origin`.
 
-Now that we've linked those up, let's push our code up to that repository. Firstly we'll want to run `git status` to confirm the branch that we are on as well as what state our code is in. You cannot push code that is in `staging`, you can only push code that is committed (however you can run the command without fully committed code). For this exercise, make sure that you are on the master branch and that all your code is currently committed.
+# Pulling the repository
+
+Now that we've created this remote repository, we're going to need to pull it down first in order to be able to push to it. Fundamentally, the two repositories need to be starting from the same starting point. We created a file when we created our github repository called a README and we're going to need that in our local repository before we can push code. This is common when you're working on a project with others and they committed some features while you were working on yours. A pull is simple, we just run `git pull <name> <branch>`. Now we want to pull the `master` branch from the `origin` repository so let's do that now.
+
+```sh
+git pull origin master
+```
+
+You should get a print out similar to:
+
+```sh
+remote: Counting objects: 3, done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From github.com:MIDS-Python-Bridge-Course/Course-Overview
+ * branch            master     -> FETCH_HEAD
+   5b2de3f..7d12a82  master     -> origin/master
+Updating 5b2de3f..7d12a82
+Fast-forward
+ README.md | 1 +
+ 1 file changed, 1 insertion(+)
+```
+
+While yours will certainly be a bit different, it will have the same basic structure. Basically we pulled down that the README file to our local repository. Now when we run `ls` we'll see the readme file in our local directory!
+
+# Pushing Code
+
+Now that we've link our repositories and pulled down the changes, let's push our code up to that repository. Firstly we'll want to run `git status` to confirm the branch that we are on as well as what state our code is in. You cannot push code that is in `staging`, you can only push code that is committed (however you can run the command without fully committed code). For this exercise, make sure that you are on the master branch and that all your code is currently committed.
 
 Now we can push our code, the layout of the command is straight forward `git push <remote_name> <branch>` where remote name and branch will be filled in by us. For this exercise we're going to be pushing to `origin` and we'll be pushing the `master` branch.
+
 
 ```sh
 git push origin master
