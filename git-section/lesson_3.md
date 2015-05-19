@@ -1,19 +1,17 @@
 Introduction to git and Source Control Management Systems
 ===
 
-####What you need to know to be effective
-
-#GitHub and Collaborative Source Control
+##GitHub and Collaborative Source Control
 
 Now that we've learned most of the basics on our local machine, now we've got to get this setup for use with GitHub.
 
 
-#What is GitHub?
+##What is GitHub?
 
 [GitHub](https://github.com/) is a popular location for people to store code. During your time as a data scientist you'll frequently come across github when searching for packages, documentation, or for better understanding issues. You can do all sorts of great things with it like hosting projects or even your personal portfolio of projects.
 
 
-#Getting Set up
+##Getting Set up
 
 First, you're going to need to create a GitHub account. You can do this on the [GitHub website](https://github.com/) by clicking the `Sign Up` button. Now we'll need to make sure that our local version of git can communicate with GitHub's.
 
@@ -25,7 +23,7 @@ Once that is set up, let's go ahead and create a repository, go ahead and create
 
 [https://help.github.com/articles/create-a-repo/](https://help.github.com/articles/create-a-repo/)
 
-#Committing to a Repository
+##Committing to a Repository
 
 Now that we've created our repository, we want to push the code we've written to it! To "push code" means to copy a branch from a local repository to a remote repository. Let's break that down
 
@@ -71,7 +69,7 @@ git remote
 
 which should print `origin`.
 
-# Pulling the repository
+##Pulling a repository
 
 Now that we've created this remote repository, we're going to need to pull it down first in order to be able to push to it. Fundamentally, the two repositories need to be starting from the same starting point. We created a file when we created our github repository called a README and we're going to need that in our local repository before we can push code. This is common when you're working on a project with others and they committed some features while you were working on yours. A pull is simple, we just run `git pull <name> <branch>`. Now we want to pull the `master` branch from the `origin` repository so let's do that now.
 
@@ -97,7 +95,7 @@ Fast-forward
 
 While yours will certainly be a bit different, it will have the same basic structure. Basically we pulled down that the README file to our local repository. Now when we run `ls` we'll see the readme file in our local directory!
 
-# Pushing Code
+##Pushing code
 
 Now that we've link our repositories and pulled down the changes, let's push our code up to that repository. Firstly we'll want to run `git status` to confirm the branch that we are on as well as what state our code is in. You cannot push code that is in `staging`, you can only push code that is committed (however you can run the command without fully committed code). For this exercise, make sure that you are on the master branch and that all your code is currently committed.
 
@@ -123,3 +121,17 @@ To git@github.com:MIDS-Python-Bridge-Course/Course-Overview.git
 Now we're not going to concern ourself with exactly what that output is telling us, we just want to make sure that it ended positively and did not give us back an error. Now let's go look at GitHub and find our code is right there!
 
 Congratulations, you've just pushed your first code to GitHub. We'll be doing this a lot through this course!
+
+##Forking a repository
+
+Now sometimes you won't be able to just push to a repository. Sometimes you'll have to have a more formal process for working with others - especially when you're working on a project where stability is important. For example, large open source projects commonly have a series of ways in which changes are controlled and people make contriubtions to repositories.
+
+There are several basic models that you can read about on the git website.
+
+*LINK TO DIFFERENT CONTRIBUTION MODELS*
+
+Generally you'll be keeping things simple, either by being able to push directly to a repository or by simply creating a pull request. We'll get to that shortly and before we can we'll have to explain how to fork a repository.
+
+Forking a repository is a way in which, on github, you create a copy of a repository that becomes your own copy on your own GitHub. This allows you to make any changes, and save those changes in your own repository. If you want to make a change that you believe belongs in the original repository, you can create a pull request by pushing up to your own GitHub fork, then navigating to the central repository and manually creating a pull request.
+
+*LINK TO HOW TO CREATE A PULL REQUEST*
