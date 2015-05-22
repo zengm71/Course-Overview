@@ -31,7 +31,19 @@ Enter the version control system, a consistent, organized way to control version
 
 Now that we've explained the problem set that way - let's read a little bit more about get and getting started with verison control by defining more specifically the differences between local, centralized, and distributed version control systems.
 
-Think of it this way, a version control system is like Dropbox or Google Drive. You've got a copy of a file on your computer, you've got a copy on Google's Servers and a copy on a friend's computer if it's a shared folder. Rather than syncing being automatic, you have to specify exactly what happens and when. If I want to send a file to the Github server, I've got to `git push origin master` the file. Unlike Dropbox or Google Drive which assumes that it knows what you want it to do, version control is much more precise - you are in control every step of the way.
+Think of it this way, a version control system is like Dropbox or Google Drive. You've got a copy of a file on your computer, you've got a copy on Google's Servers and a copy on a friend's computer if it's a shared folder. When you save a file, that file is automatically synced from your own computer, to Google, and on your friend's computer. It is as if Google and your friend's computer knows when that file is updated and then  to make sure it has the most up to date copy of the file.
+
+Now Git works in a simliar way but with a key difference: rather than syncing being automatic, you have to specify exactly what happens and when. Let's go back to our previous example. When I save a file using Git, neither Google, nor my friend's computer syncs automatically to get the most up to date file.  
+
+However if I run the command:
+
+`git push origin master`
+
+That then manually pushes my changes to Google servers. If my friend now wants the latest and greatest, she can now pull those changes from Google with this command:
+
+`git pull origin master`
+
+and now all of the changes have been downloaded to my friend's computer. We will get into more on what `origin master` means later but these are the steps where you would share files using git. Unlike Dropbox or Google Drive which assumes that it knows what you want it to do, version control is much more precise - you are in control every step of the way.
 
 Read the [version control introduction](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) on the git-scm website to get a more precise definition of version control. That will also gives us exact definitions of local, centralized, and distributed version control systems.
 
@@ -45,9 +57,9 @@ Now that we've gotten those definitions, let's learn some of the vocabulary and 
 - Repository (repo)
 	- A repository is a copy of a project. It can either be on your local computer or on a server.
 - Branch
-	- Is an offshoot of a project or a version of the project. *needs to be more precise*
+	- An independent copy of the project where changes can be made without disrupting the source of truth: the *master branch/trunk*
 - Master Branch/Trunk
-	- A master branch is the core tree trunk of your project, you can branch off of the trunk but it is the core branch in the project.
+	- A master branch is the core tree trunk of your project. Plese note: you can branch off of the trunk but the master branch is the core branch in the project. Think of it as the source of truth of the project.
 - Staging
 	- The staging area is one where you prepare and review to make a commit to a repository. It's where you might run tests to make sure that the code you are committing is valid.
 - Remote Repo
@@ -64,15 +76,15 @@ Now that we've gotten those definitions, let's learn some of the vocabulary and 
 - Branch
 	- Creates a local copy of the current branch.
 - Merge
-	- Merges a branch into another branch.
+	- Merges a the changes of a branch into another branch.
 - Push
 	- Pushes a local branch to a remote repository.
 - Pull Request
-	-
+	- A request to other people collaborating on the project to *pull* a particular branch and review the changes. That way someone else can proofread your changes before those changese are *merged* to the master branch.
 - Commit
 	- Commits a files/lines in files in the staging environment to the current branch in the repository.
 - Checkout
-	- Checks out a file or a commit **something...**
+	- Switches your repository to a particular branch (or tag or commit, but that is out of the scope of this tutorial). For example, you would *checkout* your friend's *branch* if they initiated a *pull request* for you. You would then see your repository with all of your friend's changes. You then can switch back to the *master branch* when you want to go back to the source of truth.
 - Clone
 	- Copies a remote repository to the local environment
 
