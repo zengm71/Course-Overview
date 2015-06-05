@@ -126,12 +126,25 @@ Congratulations, you've just pushed your first code to GitHub. We'll be doing th
 
 Now sometimes you won't be able to just push to a repository. Sometimes you'll have to have a more formal process for working with others - especially when you're working on a project where stability is important. For example, large open source projects commonly have a series of ways in which changes are controlled and people make contriubtions to repositories.
 
-There are several basic models that you can read about on the git website.
-
-*LINK TO DIFFERENT CONTRIBUTION MODELS*
+There are [several basic distributed models](http://git-scm.com/book/en/v2/Distributed-Git-Distributed-Workflows) that you can read about on the git website.
 
 Generally you'll be keeping things simple, either by being able to push directly to a repository or by simply creating a pull request. We'll get to that shortly and before we can we'll have to explain how to fork a repository.
 
 Forking a repository is a way in which, on github, you create a copy of a repository that becomes your own copy on your own GitHub. This allows you to make any changes, and save those changes in your own repository. If you want to make a change that you believe belongs in the original repository, you can create a pull request by pushing up to your own GitHub fork, then navigating to the central repository and manually creating a pull request.
 
-*LINK TO HOW TO CREATE A PULL REQUEST*
+[GitHub's Pull Request Instructions.](https://help.github.com/articles/creating-a-pull-request/)
+
+What's great about a pull request is that if you realize you may have misspelled something, or forgotten something, then you can just push again (to your repository) and those changes will be reflected in the pull request.
+
+##Conclusion
+
+Now you're done! You've covered the basics of git and how git works in the real work. You've created repositories on your own computer, you've forked them from other repositories, and you've pushed to other ones and you've understood how you would go about creating a pull request to work with others on projects.
+
+For the purposes of this course, you've gotten an excellent introduction to git and the GitHub system. Don't worry if you don't understand everything in perfect detail so far. As you get more experience with GitHub, it will become more and more intuitive.
+
+As a final word of advice, remember, any problem you ever have wanted to solve with Git has been solved before! Every single one. So, if you're ever trying to fix a problem, you can simply search for the answers on the internet - the important part is just to frame in using the "git" vocabulary. For example
+
+- *How do you rollback a commit?*
+- *how do you edit a git commit message?*
+
+Those are questions using the contextual vocabulary. This is something that will help you over and over again in your technical and data science careers. It's essential that when you're asking technical questions, frame it using the vocabulary of the language or framework you're trying to solve the problem in.
