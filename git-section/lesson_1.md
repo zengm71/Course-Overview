@@ -39,7 +39,19 @@ Now that we've got a better understanding of the problem that we're solving, let
 
 A simple example of a distributed version control system is Dropbox or Google Drive. You've got a copy of a file on your home computer, you've got a copy on Google's/Dropbox's servers and finally a copy on your work computer. When you make changes, Google and Dropbox track these changes, assure there are no conflicts with other files, then make sure that all the devices have the same copy of the same document that is up to date with the most recent version.
 
-What seperates git and other version control systems, is that unlike Dropbox and Google Drive, none of the synchronization happens automatically, changes aren't automatically logged. You have to specify exactly what happens and when. In order to save a change as a new version, you can't just save the file, you have to commit those changes with a message. If you want to send it to GitHub (or to a remote server) you've got push the changes manually. You are in control every step of the way.
+Think of it this way, a version control system is like Dropbox or Google Drive. You've got a copy of a file on your computer, you've got a copy on Google's Servers and a copy on a friend's computer if it's a shared folder. When you save a file, that file is automatically synced from your own computer, to Google, and on your friend's computer. It is as if Google and your friend's computer knows when that file is updated and then  to make sure it has the most up to date copy of the file.
+
+Now Git works in a simliar way but with a key difference: rather than syncing being automatic, you have to specify exactly what happens and when. Let's go back to our previous example. When I save a file using Git, neither Google, nor my friend's computer syncs automatically to get the most up to date file.
+
+However if I run the command:
+
+`git push origin master`
+
+That then manually pushes my changes to Google servers. If my friend now wants the latest and greatest, she can now pull those changes from Google with this command:
+
+`git pull origin master`
+
+and now all of the changes have been downloaded to my friend's computer. We will get into more on what `origin master` means later but these are the steps where you would share files using git. Unlike Dropbox or Google Drive which assumes that it knows what you want it to do, version control is much more precise - you are in control every step of the way.
 
 Read the [version control introduction](http://git-scm.com/book/en/v2/Getting-Started-About-Version-Control) on the git-scm website to get a more precise definition of version control. That will also gives us exact definitions of local, centralized, and distributed version control systems. Once you've learned that, we'll take the next step and get started on our own computer.
 
@@ -54,9 +66,9 @@ One of the most difficult transitions for new users is the vocabulary used in ve
 - Repository (repo)
 	- A repository is a copy of a project. It can either be on your local computer or on a server. It houses all the data associated with that project including both files and folders.
 - Branch
-	- A branch is a sub-copy of a repository. For instance, if you're creating a new feature for your codebase, you might make a new branch to do so to make sure that the stable version of the code remains untouched. Branches live within repositories and can be, pushed, pulled, and shared.
+	- An independent copy of the project where changes can be made without disrupting the source of truth: the *master branch/trunk*
 - Master Branch/Trunk
-	- The master branch is the core tree trunk of your project. Typically, branches will be created off of the master branch, as in the above example of a feature branch, then merged back after all the changes are completed.
+	- A master branch is the core tree trunk of your project. Plese note: you can branch off of the trunk but the master branch is the core branch in the project. Think of it as the source of truth of the project.
 - Staging
 	- The staging area is one where you prepare and review to make a commit to a branch. Staging is where you might run tests to make sure that the code you are about to commit is ready to be committed.
 - Remote Repo
@@ -75,13 +87,15 @@ One of the most difficult transitions for new users is the vocabulary used in ve
 - Branch
 	- Creates a new branch in your local repository. When you perform this action, it will be created off of the branch that you are currently on.
 - Merge
-	- Merges a branch into another branch.
+	- Merges a the changes of a branch into another branch.
 - Push
 	- Pushes a local branch to a remote repository.
+- Pull Request
+	- A request to other people collaborating on the project to *pull* a particular branch and review the changes. That way someone else can proofread your changes before those changese are *merged* to the master branch.
 - Commit
 	- Commits a files/lines in files in the staging environment to the current branch in the repository.
 - Checkout
-	- To checkout is to look at a specific branch, a previous commit, or a copy of a file.
+	- Switches your repository to a particular branch (or tag or commit, but that is out of the scope of this tutorial). For example, you would *checkout* your friend's *branch* if they initiated a *pull request* for you. You would then see your repository with all of your friend's changes. You then can switch back to the *master branch* when you want to go back to the source of truth.
 - Clone
 	- Copies a remote repository to the local environment.
 
@@ -147,7 +161,7 @@ print("I'm also learning git because I value good coding practices!")
 Let's go ahead and make sure that it works. We can do that by executing the python file from the command line. Go ahead and run
 
 ```sh
-python hello.py 
+python hello.py
 # to execute it with python3
 python3 hello.py
 ```
@@ -215,7 +229,7 @@ Now let's do just that, commit it to the formal history. We can do that with:
 git commit
 ```
 
-This will bring up a prompt that will ask us for our commit details, basically a message that we want to leave to others recording the changes that we made. In the prompt, go ahead and write "My first commit". 
+This will bring up a prompt that will ask us for our commit details, basically a message that we want to leave to others recording the changes that we made. In the prompt, go ahead and write "My first commit".
 
 If the prompt is vi you may need to hit the `i` key before you can type.
 
