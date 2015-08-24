@@ -1,0 +1,7 @@
+## Installing Git
+
+To install Git, head over to the [git homepage](http://git-scm.com/) and click the downloads button on the right hand side for your Operating System (Mac OS X, Linux, Windows).
+
+Before continuing, this is a good time to read section 2.1 and the start of section 2.2 (only up through the subsection titled "Ignoring Files") of Pro Git:
+
+http://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository.
