@@ -1,0 +1,7 @@
+[W 05:00:54.191 NotebookApp] WARNING: The notebook server is listening on all IP addresses and not using encryption. This is not recommended.
+[I 05:00:54.192 NotebookApp] The port 9999 is already in use, trying another random port.
+[I 05:00:54.192 NotebookApp] The port 10000 is already in use, trying another random port.
+[I 05:00:54.195 NotebookApp] Serving notebooks from local directory: /home/ec2-user/Course-Overview
+[I 05:00:54.195 NotebookApp] 0 active kernels 
+[I 05:00:54.195 NotebookApp] The IPython Notebook is running at: http://[all ip addresses on your system]:10001/
+[I 05:00:54.196 NotebookApp] Use Control-C to stop this server and shut down all kernels (twice to skip confirmation).
