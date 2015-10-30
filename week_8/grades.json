@@ -1,0 +1,24 @@
+{
+	"students": {
+		
+		"John": {
+			"grades": [88]
+		},
+
+		"Kate": {
+			"grades": [93]
+		},
+
+		"Harry": {
+			"grades": [93]
+		},
+
+		"Linda": {
+			"grades": [87]
+		},
+
+		"Harriet": {
+			"grades": [91]
+		}
+	}
+}
